@@ -4,37 +4,65 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:
+            Colors.blue, // Define a cor de fundo da AppBar como azul
+        title: Text('Login'),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            // Adicione aqui a lógica para mostrar o menu suspenso
+          },
+        ),
+        elevation: 2, // Altura do relevo da AppBar
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Login',
+              Card(
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0.0),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Sign in',
+                  ),
                 ),
               ),
-              SizedBox(height: 20.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Password',
+              SizedBox(height: 30.0),
+              Card(
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0.0),
                 ),
-                obscureText: true,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                  ),
+                  obscureText: true,
+                ),
               ),
-              SizedBox(height: 20.0),
-              TextButton(
-                onPressed: () {
-                  // Implementar ação para recuperar senha
-                },
-                child: Text('Esqueceu a senha?'),
-              ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 30.0),
               ElevatedButton(
                 onPressed: () {
                   // Implementar ação para entrar na página
                 },
-                child: Text('Entrar'),
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                child: Text('enter'),
+              ),
+              SizedBox(height: 30.0),
+              Text(
+                style: TextStyle(
+                  color: Colors.blue, // Define a cor do texto como vermelho
+                ),
+                'Forgot password?',
               ),
             ],
           ),
