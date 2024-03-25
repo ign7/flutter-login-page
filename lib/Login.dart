@@ -1,4 +1,8 @@
+import 'dart:html';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -7,8 +11,11 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor:
             Colors.blue, // Define a cor de fundo da AppBar como azul
-        title: Text('Login'),
+        title: Text(style: TextStyle(color: Colors.white), 'Login'),
         leading: IconButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+          ),
           icon: Icon(Icons.menu),
           onPressed: () {
             // Adicione aqui a lógica para mostrar o menu suspenso
