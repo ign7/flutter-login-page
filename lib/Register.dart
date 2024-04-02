@@ -10,6 +10,11 @@ class Register extends StatefulWidget {
 class _RegisterPageState extends State<Register> {
   bool _isObscured = true;
   late TextEditingController _passwordController;
+  bool _isMaleSelected = false;
+  bool _isFemaleSelected = false;
+  bool _notifyByEmail = false;
+  bool _notifyByCellphone = false;
+  double _fontSize = 16.0;
 
   @override
   void initState() {
@@ -106,18 +111,92 @@ class _RegisterPageState extends State<Register> {
               ],
             ),
             SizedBox(height: 16.0),
+            Row(
+              children: <Widget>[
+                Text('Masculino'),
+                Checkbox(
+                  value: _isMaleSelected,
+                  onChanged: (value) {
+                    setState(() {
+                      _isMaleSelected = value!;
+                      if (_isMaleSelected) {
+                        _isFemaleSelected = false;
+                      }
+                    });
+                  },
+                  activeColor: Colors.blue,
+                ),
+                Text('Feminino'),
+                Checkbox(
+                  value: _isFemaleSelected,
+                  onChanged: (value) {
+                    setState(() {
+                      _isFemaleSelected = value!;
+                      if (_isFemaleSelected) {
+                        _isMaleSelected = false;
+                      }
+                    });
+                  },
+                  activeColor: Colors.blue,
+                ),
+              ],
+            ),
+            SizedBox(height: 16.0),
+            Text('Notificações'),
+            Row(
+              children: <Widget>[
+                Text('Email'),
+                Switch(
+                  value: _notifyByEmail,
+                  onChanged: (value) {
+                    setState(() {
+                      _notifyByEmail = value;
+                    });
+                  },
+                  activeColor: Colors.blue,
+                ),
+                Text('Celular'),
+                Switch(
+                  value: _notifyByCellphone,
+                  onChanged: (value) {
+                    setState(() {
+                      _notifyByCellphone = value;
+                    });
+                  },
+                  activeColor: Colors.blue,
+                ),
+              ],
+            ),
+            SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
                 GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                  );
-                },
-              );
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                    );
+                  },
+                );
               },
               child: Text('Register'),
+            ),
+            SizedBox(height: 16.0),
+            Slider(
+              value: _fontSize,
+              min: 16,
+              max: 32,
+              activeColor: Colors.blue,
+              onChanged: (value) {
+                setState(() {
+                  _fontSize = value;
+                });
+              },
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'IGOR FREDERICO GOMES QUARESMA',
+              style: TextStyle(fontSize: _fontSize),
             ),
           ],
         ),
