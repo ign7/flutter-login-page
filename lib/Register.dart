@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Login.dart';
 import 'Login.dart';
 
@@ -87,7 +88,7 @@ class _RegisterPageState extends State<Register> {
                         onPressed: _togglePasswordVisibility,
                       ),
                     ),
-                    obscureText: true,
+                    obscureText: _isObscured,
                   ),
                 ),
               ],
@@ -105,7 +106,7 @@ class _RegisterPageState extends State<Register> {
                         onPressed: _togglePasswordVisibility,
                       ),
                     ),
-                    obscureText: true,
+                    obscureText: _isObscured,
                   ),
                 ),
               ],
@@ -113,6 +114,10 @@ class _RegisterPageState extends State<Register> {
             SizedBox(height: 16.0),
             Row(
               children: <Widget>[
+                Text(
+                  'Genero:',
+                  style: TextStyle(fontSize: _fontSize),
+                ),
                 Text('Masculino'),
                 Checkbox(
                   value: _isMaleSelected,
@@ -142,8 +147,12 @@ class _RegisterPageState extends State<Register> {
               ],
             ),
             SizedBox(height: 16.0),
-            Text('Notificações'),
+            Container(
+              alignment: Alignment.center,
+              child: Text('Notificações'),
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text('Email'),
                 Switch(
@@ -155,6 +164,11 @@ class _RegisterPageState extends State<Register> {
                   },
                   activeColor: Colors.blue,
                 ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
                 Text('Celular'),
                 Switch(
                   value: _notifyByCellphone,
