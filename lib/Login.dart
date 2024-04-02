@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'register.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -70,6 +71,21 @@ class LoginPage extends StatelessWidget {
                   color: Colors.blue, // Define a cor do texto como vermelho
                 ),
                 'Forgot password?',
+              ),
+              SizedBox(height: 30.0),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Register()),
+                  );
+                },
+                child: Text(
+                  'Register...',
+                  style: TextStyle(
+                    color: Colors.blue, // Define a cor do texto como azul
+                  ),
+                ),
               ),
             ],
           ),
