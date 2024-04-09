@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(), // Exibe a tela de login
+      home: Login(), // Exibe a tela de login
     );
   }
 }

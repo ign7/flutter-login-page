@@ -184,13 +184,9 @@ class _RegisterPageState extends State<Register> {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
-                    );
-                  },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
                 );
               },
               child: Text('Register'),
