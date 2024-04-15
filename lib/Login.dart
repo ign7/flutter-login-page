@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'register.dart';
 import 'homepage.dart';
+import 'Rotas.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -58,10 +59,7 @@ class Login extends StatelessWidget {
               SizedBox(height: 30.0),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                  );
+                  Navigator.pushNamed(context, Rotas.home);
                 },
                 style: ButtonStyle(
                   backgroundColor:
@@ -79,10 +77,7 @@ class Login extends StatelessWidget {
               SizedBox(height: 30.0),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Register()),
-                  );
+                 Navigator.pushNamed(context, Rotas.register);
                 },
                 child: Text(
                   'Register...',

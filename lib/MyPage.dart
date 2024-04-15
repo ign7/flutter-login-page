@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/HomePage.dart';
+import 'Rotas.dart';
 
 class MyPage extends StatelessWidget {
   final String mensagem;
@@ -42,10 +43,7 @@ class MyPage extends StatelessWidget {
               SizedBox(height: 30.0),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                  );
+                  Navigator.pushNamed(context, Rotas.home);
                 },
                 style: ButtonStyle(
                   backgroundColor:

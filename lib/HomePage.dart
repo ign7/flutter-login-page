@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'register.dart';
 import 'MyPage.dart';
+import 'Rotas.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -67,7 +68,18 @@ class _HomePageState extends State<HomePage> {
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.blue),
                 ),
-                child: Text('enter'),
+                child: Text('send'),
+              ),
+              SizedBox(height: 30.0),
+              ElevatedButton(
+                onPressed: () {
+                   Navigator.pushNamed(context, Rotas.login);
+                },
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.red),
+                ),
+                child: Text('back'),
               ),
             ],
           ),

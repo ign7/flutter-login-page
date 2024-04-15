@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Login.dart';
 import 'Login.dart';
+import 'Rotas.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -184,10 +185,7 @@ class _RegisterPageState extends State<Register> {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login()),
-                );
+                Navigator.pushNamed(context, Rotas.login);
               },
               child: Text('Register'),
             ),
