@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'register.dart';
+import 'homepage.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -57,7 +58,10 @@ class Login extends StatelessWidget {
               SizedBox(height: 30.0),
               ElevatedButton(
                 onPressed: () {
-                  // Implementar ação para entrar na página
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
                 },
                 style: ButtonStyle(
                   backgroundColor:
